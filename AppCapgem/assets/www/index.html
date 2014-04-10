@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script>
+		
+			function apaga()
+			{
+				document.getElementById('idEmail').value="";
+				document.getElementById('idSenha').value="";
+			}
+			function exibe()
+			{
+				var campoEmail = document.getElementById("idEmail").value;
+				var campoSenha = document.getElementById('idSenha').value;
+			
+				var emailSenha = campoEmail + " - " + campoSenha;
+				
+				var p = document.getElementById('lista');
+				
+				var li = document.createElement('option');
+				li.innerHTML = emailSenha;
+				p.appendChild(li)
+				apaga();
+			}
+			function preencherCampos()
+			{
+
+			}
+		
+		</script>
+	</head>
+	
+	<body>
+		<h1>App Capigemini Teste</h1>
+		<fieldset id="login"><legend>Login do Usuario</legend>
+			<form id="form" action="">
+				
+			
+				<p>Email: <input type="email" name="nEmail" id="idEmail" size="30" placeholder="Email do Usuario" /></p>
+				
+				<p>Senha: <input type="password" name="nSenha" id="idSenha" size="8" placeholder="8 Digitos" /></p>
+				
+				<p>
+				<input onclick="apaga()" type="button" value="Cancelar" id="btCancelar" />
+				<input onclick="exibe();" type="button" value="Salvar" id="btSalvar" />
+				<select id="lista" onselect="preencherCampos()"></select>
+				</p>					
+			
+			</form>
+		</fieldset>
+		
+	</body>
+</html>
